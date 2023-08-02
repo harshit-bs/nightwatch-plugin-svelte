@@ -1,0 +1,44 @@
+{
+  "name": "@nightwatch/svelte",
+  "version": "3.0.0",
+  "description": "Nightwatch plugin which adds support for Svelte component testing using the Vite dev server. Requires Nightwatch 2.0+",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:nightwatchjs/nightwatch-plugin-svelte.git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "eslint": "eslint index.js nightwatch.conf.js nightwatch lib",
+    "test": "nightwatch --headless"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "Harshit Agrawal",
+  "files": [
+    "lib",
+    "nightwatch",
+    "index.js",
+    "index.d.ts",
+    "vite.config.js",
+    "LICENSE",
+    "README.md"
+  ],
+  "license": "MIT",
+  "homepage": "https://nightwatchjs.org",
+  "types": "index.d.ts",
+  "devDependencies": {
+    "eslint": "^8.38.0",
+    "nightwatch": "3.0.1"
+  },
+  "dependencies": {
+    "@sveltejs/vite-plugin-svelte": "^2.4.3",
+    "@nightwatch/esbuild-utils": "^0.2.1",
+    "get-port": "^5.1.1",
+    "vite": "^4.3.1",
+    "vite-plugin-nightwatch": "git@github.com:harshit-bs/vite-plugin-nightwatch.git#feat/svelte-ct"
+  },
+  "optionalDependencies": {
+    "@esbuild/android-arm": "^0.17.19"
+  }
+}
