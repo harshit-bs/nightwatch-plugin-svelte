@@ -1,24 +1,17 @@
-import { NightwatchAPI, Element } from 'nightwatch';
-// import { MountingOptions } from '@vue/test-utils';
+import type { ComponentConstructorOptions, ComponentProps, SvelteComponent } from 'svelte'
 
-// type GlobalMountOptions = NonNullable<MountingOptions<any>['global']>;
+type SvelteComponentOptions<T extends SvelteComponent> = Omit<
+  ComponentConstructorOptions<ComponentProps<T>>,
+  'hydrate' | 'target' | '$$inline'
+>;
 
 declare module 'nightwatch' {
   interface NightwatchAPI {
-    importScript(
-      scriptPath: string,
-      options: { scriptType: string; componentType: string },
-      callback?: () => void
-    ): this;
-    // mountComponent(
-    //   componentPath: string,
-    //   options?: {
-    //     props?: MountingOptions<Record<string, any>>['props'];
-    //     plugin?: Pick<GlobalMountOptions, 'plugins'>;
-    //     mocks?: Pick<GlobalMountOptions, 'mocks'>;
-    //   },
-    //   callback?: (this: NightwatchAPI, result: Element) => void
-    // ): Awaitable<this, Element>;
+    mountSvelteComponent<T extends SvelteComponent>(
+      componentPath: string,
+      options?: SvelteComponentOptions<T>,
+      callback?: (this: NightwatchAPI, result: Element) => void
+    ): Awaitable<this, Element>;
     launchComponentRenderer(): this;
   }
 }
