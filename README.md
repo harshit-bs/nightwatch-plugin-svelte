@@ -2,7 +2,7 @@
 
 <p align=center>
   <img alt="Nightwatch.js Logo" src="https://raw.githubusercontent.com/nightwatchjs/nightwatch-plugin-vue/main/.github/assets/nightwatch-logo.png" width=200 />
-  <img alt="Svelte Logo" src="https://raw.githubusercontent.com/harshit-bs/nightwatch-plugin-svelte/main/.github/assets/sveltejs-logo.svg" width=200 />
+  <img alt="Svelte Logo" src="https://raw.githubusercontent.com/harshit-bs/nightwatch-plugin-svelte/main/.github/assets/sveltejs-logo.svg" width=160 />
 </p>
 
 [![Build Status][build-badge]][build]
